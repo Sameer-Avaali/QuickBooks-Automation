@@ -1,0 +1,179 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1152,914.6666666666666" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="512,850" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Bills" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1bc9dfea-00da-4268-bcd0-f55c8cea4909" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,540" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1bc9dfea-00da-4268-bcd0-f55c8cea4909" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://qbo.intuit.com/app/bills" CVScreenId="32fc44c0-a982-444c-ae5b-3237f51fdadd" CvTextArea="1872, 216, 18, 24" CvTextArgument="S" CvType="Text" DesignTimeRectangle="1841, 188, 84, 84" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Intuit account (S)' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Intuit account (S)' tag='BUTTON' type='button' class='global-header-item-button oneIntuitAccount' aaname='S' check:innerText='S' /&gt;" Guid="26acec25-fdd3-45af-94e2-5adf27aecc4b" InformativeScreenshot="1f3bb6355aa4fac6c84579665bf4bc43.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bills' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="32fc44c0-a982-444c-ae5b-3237f51fdadd" CvElementArea="1860, 206, 46, 45" CvTextArea="1872, 216, 18, 24" CvType="Icon" DesignTimeRectangle="1865, 212, 36, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='S' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='S' parentid='app' tag='SPAN' type='' class='Avatar__AvatarSpan-sc-19y5ooy-1 KeCRi iam-access-point-avatar' check:innerText='S' /&gt;" Guid="3a485292-0273-45c4-828f-80b697fd67d1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMHSURBVFhH3VfLihNBFB3cC36H4NKdKzfiyq2IKwWXblzoTnCl7hRlXIiKKwUHQUZEnEEGfIGDUePgA5/DmMRMMnm/Oulc+3RSZadzq7qqkwyNBw4duu+tOlTVPXUzRwnH/yvwY6lLl97X6fCTEu25m6ddN3K041rGJ37jHb4hBrFxYS3w5qcm7btfoLn5jBWRg1xbGAtc+N7yV4Wb3IYYA2OZwkjgiZUyO9kkxJgm0Ar8Xe/F2k5TYmzMoYNSIBKnsaVRxBw6kUqBs1y5MDGXCqzAWZy5KKrO5JhAVBg3wHaQq+4xgbbn7sBikR6vt6nQcqnXH4yBR9Xp09uCQ+dWa7TzepbNDRNzhzEiEEbKJap4OV2nZneoSoGWp/piqs7mcwyb+YhAm8I486oqxWHlljc6dPBh0f+G571vLco2XDr7ujqWq2O4YKRA3JdcgopLG+1hJtHLnGO8jSYM3t1SIC51LljFta1/g0AsFxOX0CIgBaLz4IJVfJ7tDDOJSm2XTj6rsHFxCC0CUqBt9Z5/UyPHHSZ7wDn8Ue3R/FqD9i5ssjmmDFazFIgejgtWEWdu8WdbWksQeJcudun403iGDy0CUiAaTS44iqdeVPzzyAnteit8y9K6QGgRmFig4O47ebr6oUHrtZ5v1AKwIlgSl6MiK9B2i3W8km74Bi2Am4aLU5HdYtsiiWKwynEEuBgV2SKxtZkoBo0cYrkYFVmbsTVqXGfvvGbgQqo29g3n8Ut5YOSut9OwnnCMjqxR21x1hx5t0S+vGABU6kqmQ0eWBjuAZ2rTkYWCotn/wK75Za86wLRZOLpcoq+V0Wrl8Kfp0jFLL1Q2C4BNuwWjPu3Zx2reoXKnL8WieHOesNufm/5Wc7k6atstYNrVbMNg9QqMCUx8yw8k+k+TgE13PSnDhRGEUmDi/7gDSJzlSmJsnThAK1BgFmdSdebCMBIIoMKmseUYg6tWFYwFCsBI42w7csImbAJrgQK4L3Gpo/PAqqCHQ6MJ4jfe4RtignerLWIL3C4kXCDRX1KZkW7dl6vnAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign out'" sap:VirtualizedContainerService.HintSize="354,220" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1bc9dfea-00da-4268-bcd0-f55c8cea4909" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://qbo.intuit.com/app/bills" CVScreenId="32fc44c0-a982-444c-ae5b-3237f51fdadd" CvTextArea="1602, 629, 228, 24" CvTextArgument="How to manage bills" CvType="Text" DesignTimeRectangle="1505, 618, 390, 54" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Sign out' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Sign out' tag='BUTTON' type='button' class='idsTSButton idsF Button-button-c378c8b Button-quickbooks-8c2f8ef Button-light-20b6ae9 Button-size-medium-422b147 Button-purpose-passive-d87a7d9 Button-priority-primary-08cdd2f AccessPointDetailStyles__SignOutButton-sc-2fkx04-7 iYCJyx' aaname='Sign out' check:innerText='Sign out' /&gt;" Guid="f92f8d48-8216-4d20-8287-36f3f91555f8" InformativeScreenshot="1719d9c0b2d196392e1770103d335e4d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bills' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="32fc44c0-a982-444c-ae5b-3237f51fdadd" CvTextArea="1658, 633, 121, 24" CvTextArgument="to manage" CvType="Text" DesignTimeRectangle="1654, 627, 92, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Sign out' parentid='headerFlyoutNode-oneIntuitAccount' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign out' parentid='headerFlyoutNode-oneIntuitAccount' tag='STRONG' type='' class='Typography-quickbooks-96a8c10 Typography-light-f6c67d3 Typography-demi-5d6d061' check:innerText='Sign out' /&gt;" Guid="9cb55e50-517c-42dc-bb35-11e8d50fe149" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="5f7bfeaf45231631102402512d8d0f5b.jpg" Selector="&lt;html app='msedge.exe' title='Bills' /&gt;" Title="Bills" Url="https://qbo.intuit.com/app" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Vendors" sap:VirtualizedContainerService.HintSize="450,482.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="4f63dee7-1496-4635-84ae-eac8d3a1a7a2" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,200.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="354,110" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_4" Version="V4" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="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" InformativeScreenshot="640bf9225f7840aeb3a58d4e8489dd52.jpg" Selector="&lt;html app='msedge.exe' title='Vendors' /&gt;" Title="Vendors" Url="https://qbo.intuit.com/app/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

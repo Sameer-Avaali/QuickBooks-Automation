@@ -1,0 +1,388 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="InputBillsDt" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="InputVendorDt" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1152,4313.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>CD0AF4F0D13_vendor_L.UnCP32GwHnD1WqXhE2QFQCF4</AssemblyReference>
+      <AssemblyReference>CD0AF4F0D13_vendor_C.LTIKB1QVmlA1WBGHM27qY4b3</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="515.3333333333334,4248.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="InputFileExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="453.3333333333333,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:FileExistsX DisplayName="File Exists" Exists="[InputFileExists]" sap:VirtualizedContainerService.HintSize="453.3333333333333,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_Config(&quot;Input Folder Path&quot;).ToString + path.DirectorySeparatorChar +now.ToString(&quot;ddMMyyyy&quot;)+path.DirectorySeparatorChar+ in_Config(&quot;Input File Name&quot;).ToString]" />
+    <If Condition="[InputFileExists]" sap:VirtualizedContainerService.HintSize="453.3333333333333,1291.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,318.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[InputBillsDt]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_Config(&quot;Input File Bills Sheet Name&quot;).ToString]" WorkbookPath="[in_Config(&quot;Input Folder Path&quot;).ToString + path.DirectorySeparatorChar+ now.ToString(&quot;ddMMyyyy&quot;)+path.DirectorySeparatorChar + in_Config(&quot;Input File Name&quot;).ToString]" />
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[InputVendorDt]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="354,110.66666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_Config(&quot;Input File Vendor Details Sheet Name&quot;).ToString]" WorkbookPath="[in_Config(&quot;Input Folder Path&quot;).ToString + path.DirectorySeparatorChar+ now.ToString(&quot;ddMMyyyy&quot;)+path.DirectorySeparatorChar + in_Config(&quot;Input File Name&quot;).ToString]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,800.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Dear User,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Please note that the &lt;/SPAN&gt;&lt;SPAN&gt;&amp;quot;&lt;/SPAN&gt;&lt;SPAN&gt;QuickBooks  &lt;/SPAN&gt;&lt;SPAN&gt;Automation File does not Exists&amp;quot;&lt;/SPAN&gt;&lt;SPAN&gt;.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;This is a bot generated&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;message &lt;/SPAN&gt;&lt;SPAN&gt;,&lt;/SPAN&gt;&lt;SPAN&gt;please do not re&lt;/SPAN&gt;&lt;SPAN&gt;p&lt;/SPAN&gt;&lt;SPAN&gt;ly to this.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Regards,&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Team Bot.&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="69c675b7-89f5-40a8-8da1-01ffa9bb4bf9" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,598" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="QuickBooks Automation File does not Exists" To="[New List(Of String) From {in_Config(&quot;Receiver mail address&quot;).ToString()}]" UseConnectionService="True" UseSharedMailbox="False">
+            <umam:SendMailConnections.AttachmentsBackup>
+              <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umam:SendMailConnections.AttachmentsBackup>
+            <umam:SendMailConnections.InputTypeBackup>
+              <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umam:SendMailConnections.InputTypeBackup>
+            <umam:SendMailConnections.MailboxBackup>
+              <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umam:SendMailConnections.MailboxBackup>
+          </umam:SendMailConnections>
+          <Throw Exception="[New BusinessRuleException(&quot;Files not found&quot;)]" sap:VirtualizedContainerService.HintSize="354,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: QuickBooks®: official Site | Smart Tools. Better Business." sap:VirtualizedContainerService.HintSize="453.3333333333333,2478.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,2236.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Visit the US site'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://quickbooks.intuit.com/#" CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvTextArea="743, 728, 196, 24" CvTextArgument="Visit the US site" CvType="Text" DesignTimeRectangle="746, 724, 193, 33" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='__next' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='SPAN' type='' class='' aaname='Visit the US site' check:innerText='Visit the US site' /&gt;" Guid="17ba0279-ad50-4334-b4a1-9b93a7591c8d" InformativeScreenshot="5200bb72725b74cad7108dd0f718b445.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks®: official Site | Smart Tools. Better Business.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NHover DisplayName="Hover 'Sign in'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="https://quickbooks.intuit.com/#" CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvElementArea="1615, 383, 226, 75" CvType="InputBox" DesignTimeRectangle="1617, 384, 225, 72" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='Button_button__afa656cf Button_rwSmall__afa656cf Button_rwSecondary_Blue__afa656cf SignInMenu_menuToggle__de07c043' aaname='Sign in' check:innerText='Sign in' /&gt;" Guid="d18f615c-3b9b-4b5d-b1e7-d30438dbd00b" InformativeScreenshot="17b6ae1e794f312ac6620480b38270f7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks®: official Site | Smart Tools. Better Business.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvElementArea="1615, 383, 226, 75" CvType="InputBox" DesignTimeRectangle="1650, 406, 76, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Sign in' parentid='rw_global_nav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign in' parentid='rw_global_nav' tag='SPAN' type='' class='SignInMenu_menuToggleText__de07c043' check:innerText='Sign in' /&gt;" Guid="47e1b198-fb4d-466f-9d58-a23c6d000f12" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NHover.Target>
+              <uix:NHover.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NHover.VerifyOptions>
+            </uix:NHover>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'QuickBooks Online'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://quickbooks.intuit.com/#" DesignTimeRectangle="1378, 517, 213, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='signin-options-menu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='signin-options-menu' tag='A' type='' class='Link_link__ef683efb RwMenuItem_link__7fb388b8 Link_rwBlueGreen__ef683efb Link_body02__ef683efb Link_medium__ef683efb' aaname='QuickBooks Online' check:innerText='QuickBooks Online' /&gt;" Guid="a7a67849-eb72-4ebb-b2fc-69d0a6470f6c" InformativeScreenshot="6236f9046dba33389ffd7ad47d929521.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks®: official Site | Smart Tools. Better Business.' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Use a different user ID'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://accounts.intuit.com/app/sign-in?app_group=QBO&amp;asset_alias=Intuit.accounting.core.qbowebapp&amp;app_environment=prod" CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvTextArea="761, 455, 394, 42" CvTextArgument="Welcome to Intuit" CvType="Text" DesignTimeRectangle="676, 449, 568, 108" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Use a different user ID' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Use a different user ID' tag='BUTTON' type='' class='AccountChoicesStyles__CardButton-sc-155jui3-2 eSKPXA' check:innerText='Use a different user ID' /&gt;" Guid="bd6ed59e-89dd-4743-8358-d057b650aede" InformativeScreenshot="bb2a09b9283335bd08dbe77ce21202e9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks Online Login: Sign in to Access Your QuickBooks Account' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="765, 485, 435, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Use a different user ID' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Use a different user ID' parentid='app' tag='DIV' type='' class='AccountChoicesStyles__ButtonInfo-sc-155jui3-8 cdUzlR' check:innerText='Use a different user ID' /&gt;" Guid="80b39d14-b632-4ba4-a9fa-6bdbeb56bef4" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Email or user ID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Text="sameer.shariff@avaali.com" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://accounts.intuit.com/app/sign-in?app_group=QBO&amp;asset_alias=Intuit.accounting.core.qbowebapp&amp;app_environment=prod" CVScreenId="fa6c2ea0-50d7-4400-994f-5bd5793d1239" CvElementArea="702, 594, 513, 60" CvType="InputBox" DesignTimeRectangle="705, 597, 510, 54" DesignTimeScaleFactor="1.5" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='iux-identifier-first-international-email-user-id-input' tag='INPUT' type='text' class='idsF TextField-TFInput-5b74f65 TextField-quickbooks-6a1ccc9 TextField-light-8d9994d TextField-TFNoErrorText-e9d7d7f TextField-TFNotDisabled-7206466 TextField-size-medium-253d5f0' placeholder='Email or user ID' aaname=' ' /&gt;" Guid="fc45f2a8-e512-4af7-960b-2223f26084c0" InformativeScreenshot="f44b0c102498b5c043c98d67b12db684.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks Online Login: Sign in to Access Your QuickBooks Account' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="fa6c2ea0-50d7-4400-994f-5bd5793d1239" CvTextArea="744, 489, 176, 22" CvTextArgument="Email or user ID" CvType="Text" DesignTimeRectangle="745, 486, 174, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='STRONG' type='' class='Typography-quickbooks-7498aad Typography-light-b5a4989 Typography-medium-8efddfb' aaname='Email or user ID' check:innerText='Email or user ID' /&gt;" Guid="2a93eef6-a743-4d2d-ad96-aa3208f41e3f" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign In'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://accounts.intuit.com/app/sign-in?app_group=QBO&amp;asset_alias=Intuit.accounting.core.qbowebapp&amp;app_environment=prod" DesignTimeRectangle="721, 586, 478, 54" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='idsTSButton idsF Button-button-7306813 Button-quickbooks-b9a0f72 Button-light-e776e02 Button-size-medium-1225d24 Button-purpose-standard-c20ddd8 Button-priority-primary-9b31d62 IuxButton__StyledButton-ktqsri-0 fjUoEe Button-full-be46b30' aaname='Sign In' check:innerText='Sign In' /&gt;" Guid="a707bd0d-0382-4a56-935a-5a01681d42ac" InformativeScreenshot="772b70b8220062eecabbc23501a176cd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks Online Login: Sign in to Access Your QuickBooks Account' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="927, 598, 101, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Sign In' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign In' parentid='app' tag='SPAN' type='' class='Button-label-f10bb25' check:innerText='Sign In' /&gt;" Guid="1212ace3-15cf-430e-a0f2-0a55d3004078" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'PasswordIntuit@0406'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" IsPassword="True" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Text="Intuit@0406" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://accounts.intuit.com/app/sign-in?app_group=QBO&amp;asset_alias=Intuit.accounting.core.qbowebapp&amp;app_environment=prod" DesignTimeRectangle="721, 582, 478, 54" DesignTimeScaleFactor="1.5" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='iux-password-confirmation-password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iux-password-confirmation-password' tag='INPUT' type='password' class='idsF TextField-TFInput-8a2b0cc TextField-quickbooks-3a61b42 TextField-light-d062759 TextField-TFNoErrorText-b385be9 TextField-TFNotDisabled-a9f4959 TextField-size-medium-4c97db9' aaname='Password' /&gt;" Guid="c93dc9f6-f411-476b-bc6f-44c7a0970647" InformativeScreenshot="3d754649ae571e67b792b92c49381817.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks Online Login: Sign in to Access Your QuickBooks Account' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="721, 548, 478, 88" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='TextField-TFLabelWrapper-3541982 TextField-TFHasLabel-78d0998' aaname='' check:innerText='Password' /&gt;" Guid="e5a27135-cddf-4152-bf1e-fb22219f507e" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://accounts.intuit.com/app/sign-in?app_group=QBO&amp;asset_alias=Intuit.accounting.core.qbowebapp&amp;app_environment=prod" CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvElementArea="1003, 703, 206, 76" CvTextArea="743, 728, 442, 25" CvTextArgument="Visit the US site Go to IN site" CvType="Button" DesignTimeRectangle="721, 695, 478, 54" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='idsTSButton idsF Button-button-7306813 Button-quickbooks-b9a0f72 Button-light-e776e02 Button-size-medium-1225d24 Button-purpose-standard-c20ddd8 Button-priority-primary-9b31d62 IuxButton__StyledButton-ktqsri-0 fjUoEe Button-full-be46b30' aaname='Continue' check:innerText='Continue' /&gt;" Guid="954db416-d6c8-4757-bcbc-d1d28df13e6b" InformativeScreenshot="65cc4cc7a62ef9333d56a26949644744.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks Online Login: Sign in to Access Your QuickBooks Account' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="909, 707, 101, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Continue' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Continue' tag='SPAN' type='' class='' check:innerText='Continue' /&gt;" Guid="229b8cfe-8964-4af8-b30a-7c841d2a9fad" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Expenses'" sap:VirtualizedContainerService.HintSize="354,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c70a5260-0363-493f-87c1-8d447ada9e76" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://qbo.intuit.com/app/homepage?locale=en-us" CVScreenId="98bde1ef-34fa-4bfd-9010-1f9f1f453551" CvTextArea="74, 800, 310, 69" CvTextArgument="trusted" CvType="Text" DesignTimeRectangle="17, 778, 282, 60" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Expenses' parentid='navigation-container' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Expenses' parentid='navigation-container' tag='SPAN' type='' class='NavItem__NavLabel-sc-494hzp-2 bPoEIW' check:innerText='Expenses' /&gt;" Guid="e035c35e-139a-49f1-9f1d-83c0dfbc6cdd" InformativeScreenshot="5ae01a3513e9fdef2fe3641a5f545c97.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='QuickBooks' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPySURBVGhD7ZuxbtUwFIb7CH0Ahs6IoStbN9YO8ACIHZWZpSsL6sTEcCUkBibExIQ6ICHB0gXEwFAJIbEgVXRiCucrcXB8/8R26rhXhCN9la6vfc75aztOHN+tpmlm4cbq2q5xYKyMY6OJQB3q0mZX+SyBLJyKJbrfJn1mKFE54ANf+yrWVGRhDpbQtnFonBoq8RLgmxjbKoccZGEqbRIlejMVYh2qXFKRhTEs6J4xZ4/GIPaeyi2GLBzCgjB8j9qgmwC5ZA1zWagwxzvGSRtokyCnHZWzQhaGmEOWmJpzNRdyS1rKZKEPjlqHKtAmkSRaFjpw0DpSATaRqGhZCNaQOTur2IdvHzQfvr9rHr0/lN9PhJwH57QstAZcjWe/QD05eWzh/tjnHx+bm8+vy3oTIHd59V4rAKtcZenxBWMvv7yQ9SZyZC7XtK0VWEVuKpSD4oSCMVXvEqzdnPQ+gFWqdgdVQfCpuezp632wCtwbq4azUEEw9O69fbFcqKouQZUEo6m7gPmCq/YuVBIMXS/7gifN3ftv7l0kznqaAmuvazsm+Nmnp7121CWW+z6Tbi47sexUqIoS1ksSOP/1kxyzjHbOz5hgRCojJu0mrNkXOydOMFspqtIat1/dar6df70IPsUuK9gZOZCLq5/Aypp1gpMuVndf35nUq76VEoyRCzm5NhHOrMkWYnlAUBV68N+MiXXzzSe0VMH+HB4zcsro6V0Esy2qvuxgvgwNYxIau5iElio4hBhD4sktcU4fJM1flRiW8pQT2lTBDmIq8/2OsEJwdJNcDeXUR7rQLisYlGhyVHUDjhGsvuhgKIXG0FJ1FaGVEAxqeKes01HBKqmcG4DQSglWHeH7HiIqWP0nVb0hQislGEJLGXnZgnOGM4RWUvCU3P4LDgmdYqreEKGVFBxaEcEqqX/6oqUc5wzr0EoJViMvpSMQvLgbj8XdWi7u4aH44yGPdq5daDHBzofPmJFT1uOhtUF00Q0AknRtQosJzjFyyd4A4I99KLrFU0MwOWT0LPS2eIpu4s0pmJi0S5yzPn838cAKim3Tps5h97o0BdqlrLMD9LdpwQpn2YgPzRdcEbkRP8urltCuQLB+1QL2RfFeDu0KBHe9Cz3BYBWKvi4NrbLg8delYJWKvhAPrbLg+AtxsIrFjjxwjMG3ioLTjjyAVS52qIX1kgMrzioJzjvUAtag6LElnnJYT/3XpTNBznnHlhzWcDkH0xw4aB2pAJtEVCzIwhActQ5VoE0gSSzIQoU5XM7xYYc5Xs4BcR8LsoyfAIRY0GX8yMPHEmCYI3zOHsc3MbKGr0IWTsUS+vd/qDWEJcpStmE/xWu2fgPdgTRDgq2DjwAAAABJRU5ErkJggg==" InformativeScreenshot="7417721123db856f2f64bc6211a1f83c.jpg" Selector="&lt;html app='msedge.exe' title='QuickBooks®: official Site | Smart Tools. Better Business.' /&gt;" Title="QuickBooks®: official Site | Smart Tools. Better Business." Url="https://quickbooks.intuit.com/#" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
